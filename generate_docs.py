@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load your API key from .env
 
-GEMINI_API_KEY = os.getenv("AIzaSyACXHcheSzOShcb3lZBAdMstL4vXngk9q4")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-preview-03-25:generateContent"
 
 # Prompt template
