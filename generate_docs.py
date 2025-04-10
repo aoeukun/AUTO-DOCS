@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()  # Load your API key from .env
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-preview-03-25:generateContent"
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent"
 
 # Prompt template
 SYSTEM_PROMPT = """You are an expert technical writer and software engineer.
