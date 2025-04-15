@@ -1,11 +1,6 @@
 site_name: Auto Docs
 theme:
   name: material
-
-plugins:
-  - search
-  - macros
-
 nav:
   - Home: index.md
   - Generated Docs: generated/example.md
