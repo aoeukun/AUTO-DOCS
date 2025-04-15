@@ -1,49 +1,41 @@
-name: Generate Docs with Groq
+name: Auto-Generate Docs
 
 on:
   push:
-    branches:
-      - main  # You can change this if you are using a different branch
     paths:
-      - "src/**.py"  # Trigger only on changes to Python files in the 'src' folder
-  pull_request:
-    branches:
-      - main
+      - "src/**/*.py"
+      - "generate_docs.py"
+      - ".github/workflows/generate_docs.yml"
 
 jobs:
-  generate_docs:
+  docs:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install mkdocs mkdocs-material python-dotenv requests
 
-    - name: Run generate_docs.py script
-      env:
-        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}  # You will store the API key as a secret in GitHub
-      run: |
-        python generate_docs.py
+      - name: Generate Documentation
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python generate_docs.py
 
-    - name: Commit updated mkdocs.yml and generated docs
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add mkdocs.yml docs/generated/
-        git commit -m "Update docs and mkdocs.yml" || echo "No changes to commit"
-        git push
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./site
+      - name: Build site
+        run: mkdocs build

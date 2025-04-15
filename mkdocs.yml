@@ -1,8 +1,11 @@
-nav:
-- Home: index.md
-- Generated Docs:
-  - Example: generated\example.md
-  - One: generated\one.md
-site_name: Auto Docs (Groq)
+site_name: Auto Docs
 theme:
   name: material
+
+plugins:
+  - search
+  - macros
+
+nav:
+  - Home: index.md
+  - Generated Docs: generated/example.md
