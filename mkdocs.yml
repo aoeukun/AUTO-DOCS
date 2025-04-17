@@ -1,12 +1,8 @@
 site_name: Automatic Code Documentation
 repo_url: https://github.com/aoeukun/Automatic_Code_Documentation.git
-
 theme:
   name: material
 nav:
 - Home: index.md
 - Generated Docs:
   - Caculator: generated/caculator.md
-  - Check Even Odd: generated/check_even_odd.md
-  - Example: generated/example.md
-
