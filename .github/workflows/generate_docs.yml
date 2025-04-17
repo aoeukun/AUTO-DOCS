@@ -1,41 +1,41 @@
-name: Auto-Generate Docs
+name: Deploy MkDocs to GitHub Pages
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - "src/**/*.py"
-      - "generate_docs.py"
-      - ".github/workflows/generate_docs.yml"
+      - 'src/**/*.py'               # Trigger only when Python files in src/ change
+      - '.github/workflows/deploy.yml'  # (Optional) Track workflow updates too
+
+permissions:
+  contents: write  # Needed to push to gh-pages
 
 jobs:
-  docs:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: 🧾 Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
-      - name: Install dependencies
+      - name: 🔐 Set Gemini API Key
+        run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
+
+      - name: 📦 Install Dependencies
         run: |
-          pip install -r requirements.txt
-          pip install mkdocs mkdocs-material python-dotenv requests
+          python -m pip install --upgrade pip
+          pip install mkdocs-material python-dotenv google-generativeai pyyaml
 
-      - name: Generate Documentation
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      - name: ⚙️ Generate Documentation
         run: python generate_docs.py
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Build site
-        run: mkdocs build
+      - name: 🚀 Deploy to GitHub Pages
+        run: |
+          pip install mkdocs
+          mkdocs gh-deploy --force

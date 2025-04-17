@@ -1,6 +1,44 @@
-site_name: Auto Docs
+site_name: Automatic Code Documentation
+site_url: https://your-username.github.io/your-repo-name/
+repo_url: https://github.com/your-username/your-repo-name
+repo_name: your-repo-name
 theme:
   name: material
+  language: en
+  palette:
+  - scheme: default
+    primary: blue
+    accent: blue
+  features:
+  - navigation.instant
+  - navigation.sections
+  - navigation.expand
+  - toc.integrate
+  - content.code.copy
+  - content.action.edit
 nav:
-  - Home: index.md
-  - Generated Docs: generated/example.md
+- Home: index.md
+- About: about.md
+- Generated Docs:
+  - Caculator: generated/caculator.md
+  - Check Even Odd: generated/check_even_odd.md
+  - Example: generated/example.md
+markdown_extensions:
+- toc:
+    permalink: true
+- codehilite:
+    guess_lang: false
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.highlight
+- pymdownx.inlinehilite
+- pymdownx.snippets
+plugins:
+- search
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/your-username
