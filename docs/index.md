@@ -1,3 +1,4 @@
+
 # Welcome to the **Automatic Code Documentation Project** 🚀
 
 Welcome to the official documentation for the **Automatic Code Documentation Project**, where we automate the generation of documentation for Python code using **Gemini API** and **MkDocs**. This project ensures that your code is always well-documented, up-to-date, and easy to understand.
@@ -39,5 +40,46 @@ Welcome to the official documentation for the **Automatic Code Documentation Pro
 To get started with this project locally and view the documentation on your own machine, follow the steps below:
 
 ### 1. Clone the Repository:
+   Clone the repository using Git:
    ```bash
    git clone https://github.com/<your-username>/<your-repo-name>.git
+   ```
+
+### 2. Install Dependencies:
+   - Navigate to the project directory:
+     ```bash
+     cd <your-repo-name>
+     ```
+   - Install the required Python dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+### 3. Generate Documentation Locally:
+   - Generate the documentation for the code by running the script:
+     ```bash
+     python generate_docs.py
+     ```
+
+### 4. Serve the Documentation Locally:
+   - Serve the MkDocs site locally to view the generated documentation:
+     ```bash
+     mkdocs serve
+     ```
+   - Open your browser and go to `http://127.0.0.1:8000` to view the site.
+
+---
+
+## 👥 Contributing
+
+We encourage contributions to improve this project! If you have ideas, fixes, or enhancements, feel free to fork the repo, create a branch, and submit a **Pull Request**.
+
+---
+
+## 🌟 Project Screenshots
+
+![Project Screenshot](https://via.placeholder.com/1200x600.png?text=Project+Screenshot)
+
+> *Example of how the documentation looks when generated with MkDocs.*
+
+---
