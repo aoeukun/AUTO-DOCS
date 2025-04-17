@@ -2,4 +2,3 @@ requests
 python-dotenv
 mkdocs
 mkdocs-material
-mkdocs-macros-plugin
