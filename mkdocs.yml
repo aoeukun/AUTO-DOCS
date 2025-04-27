@@ -6,3 +6,6 @@ nav:
 - Home: index.md
 - Generated Docs:
   - Caculator: generated/caculator.md
+  - Check Even Odd: generated/check_even_odd.md
+  - Gen: generated/gen.md
+  - Prime: generated/prime.md

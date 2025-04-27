@@ -2,18 +2,17 @@
 
 ```python
 """
-This module implements a simple command-line calculator.
+A simple command-line calculator program.
 
-It provides basic arithmetic operations (addition, subtraction,
-multiplication, and division) through a user-friendly interactive interface.
-The user is prompted to choose an operation and then enter two numbers to
-perform the calculation. The result is then displayed to the user.
+This script defines basic arithmetic operations (add, subtract, multiply, divide)
+and a main calculator function that takes user input to perform these operations.
+It prompts the user to select an operation and enter two numbers, then displays the result.
+Handles potential division by zero errors and invalid input gracefully.
 """
-
 def add(x, y):
-    """Add two numbers.
+    """Calculate the sum of two numbers.
 
-    This function takes two numbers as input and returns their sum.
+    This function takes two numerical arguments and returns their sum.
 
     Args:
         x (float): The first number.
@@ -24,24 +23,26 @@ def add(x, y):
     """
     return x + y
 
-def subtract(x, y):
-    """Subtract two numbers.
 
-    This function takes two numbers as input and returns their difference (x - y).
+def subtract(x, y):
+    """Calculate the difference between two numbers.
+
+    This function subtracts the second number (y) from the first number (x).
 
     Args:
         x (float): The first number (minuend).
         y (float): The second number (subtrahend).
 
     Returns:
-        float: The difference of x and y.
+        float: The difference of x and y (x - y).
     """
     return x - y
 
-def multiply(x, y):
-    """Multiply two numbers.
 
-    This function takes two numbers as input and returns their product.
+def multiply(x, y):
+    """Calculate the product of two numbers.
+
+    This function multiplies two numerical arguments and returns their product.
 
     Args:
         x (float): The first number.
@@ -52,10 +53,11 @@ def multiply(x, y):
     """
     return x * y
 
-def divide(x, y):
-    """Divide two numbers.
 
-    This function takes two numbers as input and returns their quotient (x / y).
+def divide(x, y):
+    """Calculate the quotient of two numbers.
+
+    This function divides the first number (x) by the second number (y).
     It handles division by zero by returning an error message.
 
     Args:
@@ -64,20 +66,20 @@ def divide(x, y):
 
     Returns:
         float or str: The quotient of x and y if y is not zero.
-                      Returns "Error! Division by zero." if y is zero.
+                      Returns an error message string "Error! Division by zero." if y is zero.
     """
     if y == 0:
         return "Error! Division by zero."
     return x / y
 
+
 def calculator():
-    """Run a simple command-line calculator.
+    """Run the simple calculator program.
 
     This function presents a menu of operations to the user, takes user input
-    for the choice of operation and two numbers, performs the selected
-    calculation using helper functions (add, subtract, multiply, divide),
-    and displays the result. It also includes basic error handling for
-    invalid input (non-numeric input and invalid operation choice).
+    for the choice of operation and two numbers, performs the selected calculation,
+    and then prints the result to the console. It also includes error handling
+    for invalid input types and operation choices.
     """
     print("Simple Calculator")
     print("Select operation:")
@@ -86,14 +88,14 @@ def calculator():
     print("3. Multiply")
     print("4. Divide")
 
-    choice = input("Enter choice (1/2/3/4): ") # Prompt user to enter their choice of operation
+    choice = input("Enter choice (1/2/3/4): ") # Get user's choice of operation
 
-    if choice in ('1', '2', '3', '4'): # Check if the user's choice is valid
+    if choice in ('1', '2', '3', '4'): # Check if the choice is valid
         try:
-            num1 = float(input("Enter first number: ")) # Get the first number from the user
-            num2 = float(input("Enter second number: ")) # Get the second number from the user
-        except ValueError: # Handle potential ValueError if user enters non-numeric input
-            print("Invalid input. Please enter numeric values.")
+            num1 = float(input("Enter first number: ")) # Get the first number from the user and convert to float
+            num2 = float(input("Enter second number: ")) # Get the second number from the user and convert to float
+        except ValueError:
+            print("Invalid input. Please enter numeric values.") # Handle non-numeric input
             return # Exit the function if input is invalid
 
         if choice == '1': # Perform addition
@@ -104,8 +106,8 @@ def calculator():
             print(f"Result: {multiply(num1, num2)}")
         elif choice == '4': # Perform division
             print(f"Result: {divide(num1, num2)}")
-    else: # Handle invalid operation choice
-        print("Invalid choice")
+    else:
+        print("Invalid choice") # Handle invalid operation choice
 
 if __name__ == "__main__":
     calculator() # Execute the calculator function when the script is run directly
