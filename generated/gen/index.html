@@ -1,0 +1,700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../check_even_odd/">
+      
+      
+        <link rel="next" href="../prime/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Gen - Automatic Code Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-for-genpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Automatic Code Documentation" class="md-header__button md-logo" aria-label="Automatic Code Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automatic Code Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aoeukun/Automatic_Code_Documentation.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Automatic Code Documentation" class="md-nav__button md-logo" aria-label="Automatic Code Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Automatic Code Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aoeukun/Automatic_Code_Documentation.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Generated Docs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Generated Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Caculator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../check_even_odd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Check Even Odd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="documentation-for-genpy">Documentation for <code>gen.py</code></h1>
+<pre><code class="language-python">&quot;&quot;&quot;
+This script generates documentation for Python code files using the Google Gemini API
+and updates the navigation configuration of an mkdocs.yml file to include the
+generated documentation pages.
+
+It reads source files from a specified directory, calls the Gemini API to
+generate markdown documentation for each file, saves the documentation to
+markdown files in an output directory, and then modifies the mkdocs.yml
+file to add a 'Generated Docs' section in the navigation.
+&quot;&quot;&quot;
+
+import os
+import json
+from pathlib import Path
+import yaml
+from dotenv import load_dotenv
+import google.generativeai as genai
+
+# Load environment variables from a .env file
+load_dotenv()
+
+# Retrieve the Google API key from environment variables
+API_KEY = os.getenv(&quot;GOOGLE_API_KEY&quot;)
+
+# Gemini API configuration
+genai.configure(api_key=API_KEY)
+
+# Specify the name of the Gemini model to use for documentation generation
+MODEL_NAME = &quot;models/gemini-2.0-flash-thinking-exp-01-21&quot;
+
+# System prompt provided to the Gemini model to instruct it on documentation generation
+SYSTEM_PROMPT = &quot;&quot;&quot;Act as a Python code documentation assistant. Your task is to add comprehensive documentation to the provided Python code snippet, making it clear, understandable, and maintainable.
+
+**Instructions:**
+
+1.  **Analyze the Code:** Understand the purpose and logic of the provided Python code.
+2.  **Add Docstrings:**
+    * Include a **module-level docstring** at the very beginning of the script explaining its overall purpose and functionality.
+    * Add **function/method/class docstrings** immediately following their definition lines (`def` or `class`).
+    * Follow a clear and standard convention, preferably **Google style**:
+        * Start with a concise one-line summary (using the imperative mood, e.g., &quot;Calculate...&quot; not &quot;Calculates...&quot;). End with a period.
+        * Include a blank line after the summary if more detail follows.
+        * Add further elaboration on the object's purpose or logic if necessary.
+        * Use an `Args:` section to detail each parameter (`parameter_name (type): Description of the parameter.`).
+        * Use a `Returns:` section to detail the return value (`type: Description of the return value.`). If the function doesn't return anything explicitly (returns `None`), you can state that or omit the section.
+        * Use a `Raises:` section (if applicable) to detail any specific exceptions the code might intentionally raise (`ExceptionType: Condition under which it's raised.`).
+3.  **Add Inline Comments:** Insert inline comments (`#`) judiciously to clarify specific lines or blocks of code that involve complex logic, non-obvious operations, or important algorithmic steps. Avoid commenting on obvious code.
+4.  **Maintain Code Integrity:** Do not change the original code's logic or functionality. Only add documentation elements (docstrings and comments).
+5.  **Output Format:** Return the *complete* Python code, including the original logic, with all the added docstrings and relevant inline comments integrated directly into the code. Ensure the output is presented as a single, well-formatted Python code block.
+
+**Python Code to Document:**
+&quot;&quot;&quot;
+
+def call_gemini(code: str) -&gt; str:
+    &quot;&quot;&quot;
+    Calls the configured Gemini model to generate documentation for a given Python code snippet.
+
+    Args:
+        code (str): The Python code snippet for which documentation is to be generated.
+
+    Returns:
+        str: The text response from the Gemini model, expected to be the generated documentation.
+    &quot;&quot;&quot;
+    # Instantiate the generative model
+    model = genai.GenerativeModel(MODEL_NAME)
+    # Send the system prompt and the user's code wrapped in a markdown code block
+    response = model.generate_content([
+        {&quot;role&quot;: &quot;user&quot;, &quot;parts&quot;: [{&quot;text&quot;: f&quot;{SYSTEM_PROMPT}\n```python\n{code}\n```&quot;}]}
+    ])
+    return response.text
+
+def generate_docs(code_path: Path, output_path: Path):
+    &quot;&quot;&quot;
+    Reads a Python code file, generates documentation using `call_gemini`,
+    and writes the documentation to a markdown file.
+
+    Args:
+        code_path (Path): The path to the input Python code file.
+        output_path (Path): The path where the output markdown documentation
+                            file should be saved.
+    &quot;&quot;&quot;
+    # Read the content of the Python code file
+    code = code_path.read_text(encoding=&quot;utf-8&quot;)
+    # Generate documentation using the Gemini model
+    documentation = call_gemini(code)
+
+    # Ensure the parent directory for the output file exists
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Write the generated documentation to the output markdown file
+    # Adds a header indicating the source file
+    output_path.write_text(f&quot;# Documentation for `{code_path.name}`\n\n{documentation}&quot;, encoding=&quot;utf-8&quot;)
+
+def update_mkdocs_yml():
+    &quot;&quot;&quot;
+    Updates the mkdocs.yml file's navigation section to include links to
+    the generated documentation markdown files.
+
+    It reads the existing mkdocs configuration, finds all generated markdown
+    files in a specific directory, builds a new 'Generated Docs' navigation
+    item, removes any existing 'Generated Docs' section, and adds the new one.
+    &quot;&quot;&quot;
+    # Define the directory where generated markdown files are stored
+    GENERATED_DIR = Path(&quot;docs/generated&quot;)
+    # Define the path to the mkdocs configuration file
+    MKDOCS_YML_PATH = Path(&quot;mkdocs.yml&quot;)
+
+    # Read the existing mkdocs.yml configuration
+    with open(MKDOCS_YML_PATH, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+        config = yaml.safe_load(f)
+
+    # Find all markdown files in the generated documentation directory
+    files = [f for f in GENERATED_DIR.iterdir() if f.suffix == &quot;.md&quot;]
+    # Sort the files alphabetically for consistent navigation order
+    files.sort()
+
+    # Build the new navigation list, removing any previous 'Generated Docs' section
+    new_nav = []
+    for item in config.get(&quot;nav&quot;, []):
+        # Check if the item is a dictionary and contains the 'Generated Docs' key
+        if isinstance(item, dict) and &quot;Generated Docs&quot; in item:
+            # Skip this item (the old generated section)
+            continue
+        # Keep all other navigation items
+        new_nav.append(item)
+
+    # Create the structure for the new 'Generated Docs' navigation section
+    generated_section = {&quot;Generated Docs&quot;: []}
+    # Add each generated markdown file to the 'Generated Docs' section
+    for file in files:
+        # Create a title from the file name (e.g., 'my_module.md' -&gt; 'My Module')
+        title = file.stem.replace(&quot;_&quot;, &quot; &quot;).title()
+        # Add the file to the navigation list within the generated section
+        generated_section[&quot;Generated Docs&quot;].append({title: f&quot;generated/{file.name}&quot;})
+
+    # Append the newly created 'Generated Docs' section to the navigation
+    new_nav.append(generated_section)
+    # Update the navigation configuration in the main config dictionary
+    config[&quot;nav&quot;] = new_nav
+
+    # Write the updated configuration back to mkdocs.yml
+    # sort_keys=False maintains the original order of other nav items
+    with open(MKDOCS_YML_PATH, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        yaml.dump(config, f, sort_keys=False)
+
+    # Print a success message
+    print(&quot;✅ mkdocs.yml updated successfully.&quot;)
+
+def main():
+    &quot;&quot;&quot;
+    Main function to orchestrate the documentation generation and mkdocs update process.
+
+    Iterates through all Python files in the 'src' directory (including subdirectories),
+    generates documentation for each, saves it to the 'docs/generated' directory,
+    and finally updates the mkdocs navigation.
+    &quot;&quot;&quot;
+    # Define the source directory containing Python files
+    src_dir = Path(&quot;src&quot;)
+    # Define the output directory for generated markdown files
+    out_dir = Path(&quot;docs/generated&quot;)
+
+    # Iterate through all files ending with .py in the source directory and its subdirectories
+    for file in src_dir.rglob(&quot;*.py&quot;):
+        # Generate documentation for the current Python file
+        # The output path is constructed based on the source file name (without extension)
+        generate_docs(file, out_dir / f&quot;{file.stem}.md&quot;)
+
+    # After generating documentation for all files, update the mkdocs.yml file
+    update_mkdocs_yml()
+
+    # Print a final completion message
+    print(&quot;🎉 Documentation generated and mkdocs navigation updated.&quot;)
+
+# Entry point of the script
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
