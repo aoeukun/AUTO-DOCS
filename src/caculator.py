@@ -39,7 +39,7 @@ def calculator():
         elif choice == '4':
             print(f"Result: {divide(num1, num2)}")
     else:
-        print("Invalid choice")
+        print("Invalid choice ! Please select a valid operation.")
 
 if __name__ == "__main__":
     calculator()
