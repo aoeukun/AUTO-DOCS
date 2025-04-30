@@ -1,5 +1,4 @@
 import os
-import json
 from pathlib import Path
 import yaml
 from dotenv import load_dotenv
